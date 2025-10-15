@@ -1,0 +1,101 @@
+# Pull Docker container
+docker pull rocm/megatron-lm:v25.8_py310
+
+# Launch container with proper mounts
+docker run -it \
+    --gpus all \
+    --network host --ipc host \
+    --shm-size 128G \
+    -v $HOME/tinyllama-pretraining:/workspace/project \
+    --name megatron_env \
+    rocm/megatron-lm:v25.8_py310
+
+# You are now INSIDE the Docker container
+# Your prompt should change to root@<container-id>:/workspace#
+
+# cloud 
+
+# SSH to cluster
+ssh your_username@paramrudra.iuac.res.in
+
+# Create project directory
+mkdir -p ~/tinyllama-pretraining
+cd ~/tinyllama-pretraining
+
+# Load modules (if available)
+module load cuda/12.1
+module load anaconda
+
+# Create conda environment
+conda create -n megatron_env python=3.10
+conda activate megatron_env
+
+--- 
+
+# Check where you are
+pwd  
+# Should show /workspace (Docker) or ~/tinyllama-pretraining (cluster)
+
+# Clone repository
+git clone https://github.com/NVIDIA/Megatron-LM
+cd Megatron-LM
+
+# Install dependencies
+pip install datasets transformers nltk tensorboard
+
+--- 
+
+/workspace/Megatron-LM/  (Docker)
+OR
+~/tinyllama-pretraining/Megatron-LM/  (cluster)
+
+
+---
+# Download GPT2 tokenizer (easier than Llama tokenizer)
+wget https://huggingface.co/gpt2/resolve/main/vocab.json
+wget https://huggingface.co/gpt2/resolve/main/merges.txt
+
+# Verify files exist
+ls -lh vocab.json merges.txt code_data.jsonl
+
+---
+
+# Make sure you're in Megatron-LM directory
+cd /workspace/Megatron-LM  # Docker
+# OR
+cd ~/tinyllama-pretraining/Megatron-LM  # Cluster
+
+# Run preprocessing
+python tools/preprocess_data.py \
+    --input code_data.jsonl \
+    --output-prefix code_dataset \
+    --tokenizer-type GPT2BPETokenizer \
+    --vocab-file vocab.json \
+    --merge-file merges.txt \
+    --json-keys text \
+    --workers 8 \
+    --append-eod
+
+# This creates:
+# - code_dataset_text_document.bin
+# - code_dataset_text_document.idx
+---
+
+# Submit from login node
+sbatch submit_job.slurm
+
+# Check status
+squeue -u your_username
+
+# View logs
+tail -f training_JOBID.log
+---
+# Connect to same container
+docker exec -it megatron_env bash
+cd /workspace/Megatron-LM
+tensorboard --logdir ./tensorboard --port 6006
+---
+ssh your_username@paramrudra.iuac.res.in
+cd ~/tinyllama-pretraining/Megatron-LM
+tensorboard --logdir ./tensorboard --port 6006
+
