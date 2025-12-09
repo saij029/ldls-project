@@ -333,10 +333,10 @@ python scripts/evaluate.py \
 
 | Model | HumanEval pass@1 | MBPP pass@1 |
 |-------|------------------|-------------|
-| SmolLM-135M (base) | 2-4% | 5-8% |
-| SmolLM-135M (SFT) | 8-12% | 10-15% |
-| SmolLM-360M (SFT) | 15-20% | 18-25% |
-| SmolLM-1.7B (SFT) | 25-32% | 28-35% |
+| SmolLM-135M (base) | NA | NA |
+| SmolLM-135M (SFT) | NA | NA |
+| SmolLM-360M (SFT) | NA | NA |
+| SmolLM-1.7B (SFT) | NA | NA |
 
 ---
 
@@ -658,5 +658,3 @@ MIT License - see [LICENSE](LICENSE) file for details.
 ---
 
 **Happy Training! 🚀**
-```
-
