@@ -1,28 +1,17 @@
-Perfect! Here's a comprehensive, copy-pastable README for the entire project:
-
-***
-
-## **Create `README.md` in the root directory:**
-
-```markdown
 # LLM Code Trainer
 
 Production-grade continuous pretraining and finetuning pipeline for code language models using DeepSpeed and multi-node GPU clusters.
 
-[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
-[![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-ee4c2c.svg)](https://pytorch.org/)
-[![DeepSpeed](https://img.shields.io/badge/DeepSpeed-0.12+-green.svg)](https://www.deepspeed.ai/)
-
 ## Features
 
-- **Multi-node distributed training** with DeepSpeed ZeRO-2/3
-- **Continuous pretraining** on CodeParrot Clean (1B tokens)
-- **Supervised finetuning** on CodeAlpaca-20K
-- **Comprehensive evaluation** on HumanEval, MBPP, LiveCodeBench
-- **Efficient inference** with vLLM and INT8 quantization
-- **Production monitoring** with DCGM, W&B, TensorBoard
-- **Gradient checkpointing** and mixed precision (BF16/FP16)
-- **Smart checkpointing** with automatic cleanup
+- 🚀 **Multi-node distributed training** with DeepSpeed ZeRO-2/3
+- 📚 **Continuous pretraining** on CodeParrot Clean (1B tokens)
+- 🎯 **Supervised finetuning** on CodeAlpaca-20K
+- 📊 **Comprehensive evaluation** on HumanEval, MBPP, LiveCodeBench
+- ⚡ **Efficient inference** with vLLM and INT8 quantization
+- 📈 **Production monitoring** with DCGM, W&B, TensorBoard
+- 🔄 **Gradient checkpointing** and mixed precision (BF16/FP16)
+- 💾 **Smart checkpointing** with automatic cleanup
 
 ## Supported Models
 
@@ -636,8 +625,8 @@ We welcome contributions! Please:
 
 ```
 @software{llm_code_trainer,
-  title = {LLM Code Trainer: Production DeepSpeed Pipeline},
-  author = {Your Name},
+  title = {LDLS Project},
+  author = {Sai Varun},
   year = {2025},
   url = {https://github.com/saij029/ldls-project}
 }
@@ -663,7 +652,6 @@ MIT License - see [LICENSE](LICENSE) file for details.
 
 ## Support
 
-- 📧 Email: your.email@example.com
 - 💬 Issues: [GitHub Issues](https://github.com/saij029/ldls-project/issues)
 - 📖 Docs: [Documentation](https://github.com/saij029/ldls-project/wiki)
 
@@ -671,6 +659,4 @@ MIT License - see [LICENSE](LICENSE) file for details.
 
 **Happy Training! 🚀**
 ```
-
-***
 
