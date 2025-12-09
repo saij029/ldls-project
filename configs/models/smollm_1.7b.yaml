@@ -1,0 +1,8 @@
+model:
+  name: "smollm_1.7b"
+  model_name_or_path: "HuggingFaceTB/SmolLM-1.7B"
+  num_parameters: 1700000000
+  max_seq_length: 2048
+  use_flash_attention: true
+  gradient_checkpointing: true
+  torch_dtype: "bfloat16"

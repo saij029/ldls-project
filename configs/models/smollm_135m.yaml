@@ -1,0 +1,8 @@
+model:
+  name: "smollm_135m"
+  model_name_or_path: "HuggingFaceTB/SmolLM-135M"
+  num_parameters: 135000000
+  max_seq_length: 2048
+  use_flash_attention: false
+  gradient_checkpointing: true
+  torch_dtype: "bfloat16"
