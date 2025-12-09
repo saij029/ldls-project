@@ -1,0 +1,74 @@
+# Core Deep Learning Frameworks (CUDA 11.8 Compatible)
+torch>=2.0.0,<2.6.0  # PyTorch 2.0+ fully supports CUDA 11.8
+torchvision>=0.15.0,<0.20.0
+torchaudio>=2.0.0,<2.6.0
+
+# DeepSpeed - Optimized for CUDA 11.8
+deepspeed>=0.12.0  # CUDA 11.8 supported from v0.12+
+
+# Hugging Face Ecosystem
+transformers>=4.35.0
+accelerate>=0.25.0
+datasets>=2.15.0
+tokenizers>=0.15.0
+huggingface-hub>=0.20.0
+
+# Distributed Training & Communication
+ninja>=1.11.1  # Required for DeepSpeed ops compilation
+
+# Mixed Precision & Optimization
+# Note: Flash Attention 2.x requires CUDA 12.x on Windows
+# For CUDA 11.8, use xformers instead or Flash Attention v1
+xformers>=0.0.23  # Memory-efficient attention for CUDA 11.8
+triton>=2.1.0,<3.0.0  # Triton 2.x series for CUDA 11.8
+
+# Configuration Management
+pyyaml>=6.0.0
+omegaconf>=2.3.0
+hydra-core>=1.3.0
+
+# Experiment Tracking & Logging
+wandb>=0.16.0
+tensorboard>=2.15.0
+tensorboardX>=2.6.0
+
+# Data Processing & I/O
+numpy>=1.24.0,<2.0.0
+pandas>=2.0.0
+pyarrow>=14.0.0
+h5py>=3.10.0
+
+# Checkpointing & Storage
+safetensors>=0.4.0
+boto3>=1.34.0  # For S3 checkpoint storage
+fsspec>=2023.12.0  # Unified filesystem interfaces
+
+# Monitoring & Profiling
+py-cpuinfo>=9.0.0
+psutil>=5.9.0
+pynvml>=11.5.0  # NVIDIA GPU monitoring
+gpustat>=1.1.0
+
+# Utilities
+tqdm>=4.66.0
+colorama>=0.4.6
+regex>=2023.12.0
+sentencepiece>=0.1.99  # For certain tokenizers
+protobuf>=4.24.0,<5.0.0
+
+# Development & Testing
+pytest>=7.4.0
+pytest-cov>=4.1.0
+pytest-xdist>=3.5.0  # Parallel test execution
+black>=23.12.0
+isort>=5.13.0
+flake8>=6.1.0
+mypy>=1.7.0
+pre-commit>=3.6.0
+
+# Type Stubs
+types-PyYAML>=6.0.0
+types-tqdm>=4.66.0
+
+# Optional: Alternative to Flash Attention for CUDA 11.8
+# apex  # NVIDIA Apex for fused optimizers (install from source)
