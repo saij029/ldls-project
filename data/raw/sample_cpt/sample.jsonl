@@ -1,0 +1,3 @@
+{"text": "def hello_world():\n    print('Hello, World!')"}
+{"text": "def add(a, b):\n    return a + b"}
+{"text": "class Calculator:\n    def multiply(self, x, y):\n        return x * y"}

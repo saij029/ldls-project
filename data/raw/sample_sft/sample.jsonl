@@ -1,0 +1,3 @@
+{"instruction": "Write a function to add two numbers", "response": "def add(a, b):\n    return a + b"}
+{"instruction": "Create a hello world function", "response": "def hello_world():\n    print('Hello, World!')"}
+{"instruction": "Write a function to multiply two numbers", "response": "def multiply(x, y):\n    return x * y"}
