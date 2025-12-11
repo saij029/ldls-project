@@ -1,0 +1,48 @@
+[project]
+name = "ldls-trainer"
+version = "0.1.0"
+description = "Large-scale LLM training with DeepSpeed"
+requires-python = ">=3.9"
+dependencies = [
+    "torch>=2.1.0",
+    "transformers>=4.36.0",
+    "deepspeed>=0.14.0",
+    "datasets>=2.14.0",
+    "accelerate>=0.25.0",
+    "peft>=0.7.0",
+    "trl>=0.7.0",
+    "wandb>=0.16.0",
+    "tensorboard>=2.15.0",
+    "pyyaml>=6.0",
+    "tqdm>=4.66.0",
+    "numpy>=1.24.0",
+    "pandas>=2.0.0",
+    "sentencepiece>=0.1.99",
+    "protobuf>=4.25.0",
+    "huggingface-hub>=0.20.0",
+    "tokenizers>=0.15.0",
+    "bitsandbytes>=0.42.0",
+    "scipy>=1.11.0",
+    "ninja>=1.11.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "black>=23.0.0",
+    "isort>=5.12.0",
+    "flake8>=6.1.0",
+    "mypy>=1.7.0",
+]
+
+[build-system]
+requires = ["setuptools>=68.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.uv]
+index-url = "https://pypi.org/simple"
+
+[[tool.uv.index]]
+name = "pytorch"
+url = "https://download.pytorch.org/whl/cu121"
+explicit = true

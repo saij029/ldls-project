@@ -50,6 +50,22 @@ git clone https://github.com/saij029/ldls-project.git
 cd ldls-project
 ```
 
+### UV installation(faster)
+
+```
+# Install PyTorch with CUDA 12.1 support (fastest method)
+uv pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+
+# Install remaining dependencies (blazing fast!)
+uv pip install -r requirements.txt
+
+# Install all other dependencies
+uv pip install -e .
+
+# Or install dev dependencies
+uv pip install -e ".[dev]"
+
+```
 ### Step 2: Create Virtual Environment
 
 ```
