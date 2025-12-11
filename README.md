@@ -54,6 +54,12 @@ cd ldls-project
 
 ```
 # Install PyTorch with CUDA 12.1 support (fastest method)
+
+# Create virtual environment with uv
+uv venv --python 3.9
+
+# Activate virtual environment
+source .venv/bin/activate
 uv pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
 
 # Install remaining dependencies (blazing fast!)
